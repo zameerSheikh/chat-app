@@ -10,9 +10,26 @@ const server = express()
 
 const io = socketIO(server);
 
+const users = {};
+
 io.on('connection', (socket) => {
   console.log('Client connected');
-  socket.on('disconnect', () => console.log('Client disconnected'));
+  // socket.on('disconnect', () => console.log('Client disconnected'));
+
+  socket.on('send-chat-msg', message => {
+    // console.log('message', message);
+    socket.broadcast.emit('chat-message', {message, name: users[socket.id]});
+})
+
+socket.on('new-user', name => {
+    users[socket.id] = name;
+    socket.broadcast.emit('user-connected', name);
+})
+
+socket.on('disconnect' , () => {
+    socket.broadcast.emit('user-disconnected', users[socket.id]);
+    delete users[socket.id]
+})
 });
 
 setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
