@@ -8,10 +8,11 @@
           flex-direction: column;
       }
       #message-container {
-          height: 100vh;
+          height: 90vh;
           width: 60vw;
           align-self: center;
-          background-color: #ddd;   
+          background-color: #ddd; 
+          overflow: scroll;  
       }
 
       #message-container div {
@@ -34,8 +35,9 @@
       }
       #message-input {
           width: 20vw;
-          height: 30px;;
+          height: 35px;;
           border: 1px solid #ccc;
+          margin-inline-end: 5px;
       }
       #send-button {
           cursor: pointer;line-height: 1.75;
@@ -56,7 +58,7 @@
     
   </head>
   <body>
-    <p id="server-time"></p>
+    <!-- <p id="server-time"></p> -->
     <div id="message-container"></div>
     <form id="send-container">
         <input type="text" id="message-input">
@@ -67,10 +69,10 @@
       let socket = io();
       let el;
 
-      socket.on('time', (timeString) => {
-        el = document.getElementById('server-time');
-        el.innerHTML = 'Server time: ' + timeString;
-      });
+      // socket.on('time', (timeString) => {
+      //   el = document.getElementById('server-time');
+      //   el.innerHTML = 'Server time: ' + timeString;
+      // });
 
       const messageForm = document.getElementById('send-container');
 const messageContainer = document.getElementById('message-container');
