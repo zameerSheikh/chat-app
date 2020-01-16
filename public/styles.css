@@ -2,11 +2,10 @@ body {
     background-color: #474747;
     display: flex;
     justify-content: center;
-    flex-direction: column;
 }
 #message-container {
     height: 90vh;
-    width: 60vw;
+    width: 100%;
     align-self: center;
     background-color: #ddd; 
     overflow: scroll;  
@@ -26,15 +25,14 @@ body {
 }
 
 #send-container {
+    width: 100%;
     display: flex;
-    justify-content: center; 
-    padding: 20px;
 }
 #message-input {
-    width: 20vw;
+    width: 51.8vw;
     height: 35px;;
     border: 1px solid #ccc;
-    margin-inline-end: 5px;
+    flex-grow: 1;
 }
 #send-button {
     cursor: pointer;line-height: 1.75;
