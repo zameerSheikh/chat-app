@@ -1,9 +1,9 @@
 body {
-    background-color: #474747;
+    background-color:dimgrey;
     display: flex;
     justify-content: center;
 }
-#message-container {
+.message-container {
     height: 90vh;
     width: 100%;
     align-self: center;
@@ -11,7 +11,7 @@ body {
     overflow: scroll;  
 }
 
-#message-container div {
+.message-container div {
     background-color: #ccc;
     text-align: center;
     font-size: 20px;
@@ -20,21 +20,27 @@ body {
     margin-top: 3px;
 }
 
-#message-container div:nth-child(2n) {
+.message-container div:nth-child(2n) {
     background-color: #eee;
 }
 
-#send-container {
+.content {
+    height: 90vh;;
+}
+
+.msgForm {
     width: 100%;
     display: flex;
 }
-#message-input {
+
+.message-input {
     width: 51.8vw;
     height: 35px;;
     border: 1px solid #ccc;
     flex-grow: 1;
 }
-#send-button {
+
+.send-button {
     cursor: pointer;line-height: 1.75;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
     border-radius: 1px;

@@ -1,9 +1,9 @@
 let socket = io();
 let el;
 
-const messageForm = document.getElementById('send-container');
-const messageContainer = document.getElementById('message-container');
-const messageInput = document.getElementById('message-input');
+const messageForm = document.querySelector('.msgForm');
+const messageContainer = document.querySelector('.message-container');
+const messageInput = document.querySelector('.message-input');
 
 
 const name = prompt('what is your name?');
